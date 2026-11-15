@@ -1431,6 +1431,9 @@ body.dark-mode .stpl-name { color: #e0e0e0; }
 
 </style>
 <style id="a11y-v91">
+.pfooter .fcredit,.pfooter .pnum,.lbox span,.lph{color:#6D6D72!important}
+#PPH span,#PPH{color:#dbe4ef!important}
+
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .tcs-designer{color:#d5deea!important}
 .signlbl,.cvtolbl{color:#6D6D72!important}
@@ -1495,9 +1498,9 @@ body.dark-mode .stpl-name { color: #e0e0e0; }
       <option value="royal">Royal</option><option value="copper">Copper</option>
     </select>
     <span class="tlbl">Accent</span>
-    <input type="color" class="tcol" id="accolour" value="#1D3557" oninput="setAccent(this.value)" title="Main accent colour">
+    <input autocomplete="off" type="color" class="tcol" id="accolour" value="#1D3557" oninput="setAccent(this.value)" title="Main accent colour">
     <span class="tlbl">Sidebar</span>
-    <input type="color" class="tcol" id="sidecolour" value="#1D3557" oninput="setSideColor(this.value)" title="Sidebar background colour">
+    <input autocomplete="off" type="color" class="tcol" id="sidecolour" value="#1D3557" oninput="setSideColor(this.value)" title="Sidebar background colour">
     <select class="tsel" onchange="setFont(this.value)"><option value="dm">DM Sans</option><option value="inter">Inter</option><option value="lato">Lato</option><option value="source">Source Sans</option></select>
     <span class="tlbl">Size</span>
     <select class="tsel" onchange="setBaseSize(this.value)"><option value="13">Default</option><option value="12">Compact</option><option value="14">Large</option></select>
@@ -1508,7 +1511,7 @@ body.dark-mode .stpl-name { color: #e0e0e0; }
 
   <div class="tb-grp">
     <span class="tlbl">Zoom</span>
-    <input type="range" style="width:70px;cursor:pointer;accent-color:#fff;" min="50" max="130" value="100" id="zoomSl" oninput="setZoom(this.value)" title="Zoom builder view">
+    <input autocomplete="off" type="range" style="width:70px;cursor:pointer;accent-color:#fff;" min="50" max="130" value="100" id="zoomSl" oninput="setZoom(this.value)" title="Zoom builder view">
     <span id="zoomVal" style="color:rgba(255,255,255,.6);font-size:10px;min-width:30px;">100%</span>
   </div>
   <div class="tsep"></div>
@@ -1642,8 +1645,8 @@ body.dark-mode .stpl-name { color: #e0e0e0; }
   <button class="fb" onmousedown="fmtSize(event,-1.5)">A↓</button>
   <button class="fb" onmousedown="fmt(event,'superscript')">x²</button>
   <div class="fsep"></div>
-  <input type="color" class="fcolor" id="ftxtcol" value="#1D3557" onmousedown="event.stopPropagation()" onchange="fmtColor(this.value)" title="Text colour">
-  <input type="color" class="fcolor" id="fhilite" value="#FFF176" onmousedown="event.stopPropagation()" onchange="fmtHilite(this.value)" title="Highlight colour">
+  <input autocomplete="off" type="color" class="fcolor" id="ftxtcol" value="#1D3557" onmousedown="event.stopPropagation()" onchange="fmtColor(this.value)" title="Text colour">
+  <input autocomplete="off" type="color" class="fcolor" id="fhilite" value="#FFF176" onmousedown="event.stopPropagation()" onchange="fmtHilite(this.value)" title="Highlight colour">
   <div class="fsep"></div>
   <button class="fb" onmousedown="openLinkModal(event)">🔗</button>
   <button class="fb" onmousedown="fmt(event,'unlink')">⊘</button>
@@ -1694,7 +1697,7 @@ body.dark-mode .stpl-name { color: #e0e0e0; }
   <div class="pphead">📷 Photo Tools <button class="ppx" onclick="togglePP()">×</button></div>
   <div class="pprow">
     <label class="pplbl">Frame Size — <span id="pszval">92</span>px</label>
-    <input type="range" class="ppsl" id="pszsl" min="60" max="140" value="92" oninput="resizePhoto(this.value)" onmousedown="event.stopPropagation()">
+    <input autocomplete="off" type="range" class="ppsl" id="pszsl" min="60" max="140" value="92" oninput="resizePhoto(this.value)" onmousedown="event.stopPropagation()">
   </div>
   <div class="pprow">
     <label class="pplbl">Reposition</label>
@@ -1702,7 +1705,7 @@ body.dark-mode .stpl-name { color: #e0e0e0; }
   </div>
   <div class="pprow">
     <label class="pplbl">Remove Background</label>
-    <div class="pptol">Tolerance: <span id="tolval">40</span><input type="range" class="ppsl" id="tolsl" min="5" max="120" value="40" oninput="G('tolval').textContent=this.value" onmousedown="event.stopPropagation()" style="flex:1;margin-left:4px;"></div>
+    <div class="pptol">Tolerance: <span id="tolval">40</span><input autocomplete="off" type="range" class="ppsl" id="tolsl" min="5" max="120" value="40" oninput="G('tolval').textContent=this.value" onmousedown="event.stopPropagation()" style="flex:1;margin-left:4px;"></div>
     <button class="ppbtn" onclick="removeBG()">✂ Remove Background</button>
     <p class="pphint">Best with solid or near-solid backgrounds.</p>
   </div>
@@ -1744,11 +1747,11 @@ body.dark-mode .stpl-name { color: #e0e0e0; }
 
         <div class="pe-sec">
           <div class="pe-sec-title">🎛 Adjustments</div>
-          <div class="pe-sl-row"><label>Brightness</label><input type="range" min="-100" max="100" value="0" id="pe-bright" oninput="peSlider('bright',this)"><span class="pev" id="pev-bright">0</span></div>
-          <div class="pe-sl-row"><label>Contrast</label><input type="range" min="-80" max="80" value="0" id="pe-contrast" oninput="peSlider('contrast',this)"><span class="pev" id="pev-contrast">0</span></div>
-          <div class="pe-sl-row"><label>Saturation</label><input type="range" min="-80" max="80" value="0" id="pe-sat" oninput="peSlider('sat',this)"><span class="pev" id="pev-sat">0</span></div>
-          <div class="pe-sl-row"><label>Sharpness</label><input type="range" min="0" max="100" value="0" id="pe-sharp" oninput="peSlider('sharp',this)"><span class="pev" id="pev-sharp">0</span></div>
-          <div class="pe-sl-row"><label>BG Tolerance</label><input type="range" min="5" max="120" value="40" id="pe-bgtol" oninput="peSlider('bgtol',this)"><span class="pev" id="pev-bgtol">40</span></div>
+          <div class="pe-sl-row"><label>Brightness</label><input autocomplete="off" type="range" min="-100" max="100" value="0" id="pe-bright" oninput="peSlider('bright',this)"><span class="pev" id="pev-bright">0</span></div>
+          <div class="pe-sl-row"><label>Contrast</label><input autocomplete="off" type="range" min="-80" max="80" value="0" id="pe-contrast" oninput="peSlider('contrast',this)"><span class="pev" id="pev-contrast">0</span></div>
+          <div class="pe-sl-row"><label>Saturation</label><input autocomplete="off" type="range" min="-80" max="80" value="0" id="pe-sat" oninput="peSlider('sat',this)"><span class="pev" id="pev-sat">0</span></div>
+          <div class="pe-sl-row"><label>Sharpness</label><input autocomplete="off" type="range" min="0" max="100" value="0" id="pe-sharp" oninput="peSlider('sharp',this)"><span class="pev" id="pev-sharp">0</span></div>
+          <div class="pe-sl-row"><label>BG Tolerance</label><input autocomplete="off" type="range" min="5" max="120" value="40" id="pe-bgtol" oninput="peSlider('bgtol',this)"><span class="pev" id="pev-bgtol">40</span></div>
         </div>
 
         <div class="pe-sec">
@@ -6410,7 +6413,7 @@ initPlayoDrag();
 (function(){
   function run(){
     var d=document, tb=d.getElementById('TB');
-    if(tb){tb.setAttribute('role','toolbar');tb.setAttribute('aria-label','Resume builder toolbar');}
+    if(tb){tb.setAttribute('role','region');tb.setAttribute('aria-label','Resume builder toolbar');}
     var sel={themeSelect:'Resume theme'};
     d.querySelectorAll('#TB select').forEach(function(s){
       if(s.getAttribute('aria-label'))return;
@@ -6424,9 +6427,9 @@ initPlayoDrag();
     if(!main){var first=d.querySelector('.pfooter');var host=first?first.closest('[class*=page],[class*=PAGE],[id*=page],[id*=P]'):null;
       if(host&&host.parentElement){host.parentElement.setAttribute('role','main');host.parentElement.setAttribute('aria-label','Resume editor');}}
     if(!d.querySelector('[role=main],main')){var w=d.querySelector('#TB')&&d.querySelector('#TB').nextElementSibling;if(w){w.setAttribute('role','main');w.setAttribute('aria-label','Resume editor');}}
-    if(!d.querySelector('h1')){var h1=d.createElement('h1');h1.className='sr-only';h1.textContent='Resume Builder Pro';d.body.insertBefore(h1,d.body.firstChild);}
-    d.querySelectorAll('.pfooter').forEach(function(f){f.setAttribute('role','contentinfo');});
-    d.documentElement.lang=d.documentElement.lang||'en';
+    if(!d.querySelector('h1')){var h1=d.createElement('h1');h1.className='sr-only';h1.textContent='Resume Builder Pro';var mm=d.querySelector('[role=main]');(mm||d.body).insertBefore(h1,(mm||d.body).firstChild);}
+    
+    d.documentElement.lang=d.documentElement.lang||'en';var ss=d.getElementById('saveStatus');if(ss){ss.setAttribute('role','status');ss.setAttribute('aria-live','polite');}d.querySelectorAll('input[type=range],input[type=color]').forEach(function(i){i.setAttribute('autocomplete','off')});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
   window.addEventListener('load',run);
